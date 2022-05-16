@@ -1,0 +1,62 @@
+/*** Modal Con bootstrap ***/
+#modalcomentarios{
+    background-color: transparent !important;
+}
+#modalcomentarios .modal-dialog{
+    color: black;
+    background-color: transparent !important;
+}
+#modalcomentarios .modal-dialog .modal-content{
+    background-color: white; /*dimgrey;*/
+    border-radius: 30px;
+}
+
+
+/*** Header Modal Comentarios ***/
+#modalcomentarios .modal-dialog .modal-content .modal-header{
+    background-color: white; /*rgb(32, 32, 32, 0.5);  gray */
+    border-radius: 30px;
+}
+
+
+/*** Body Modal Comentarios ***/
+#modalcomentarios .modal-dialog .modal-content .modal-body{
+    margin-top: 5px;
+    height: auto;
+    max-height: 600px !important;
+    overflow: auto;
+}
+#modalcomentarios .modal-dialog .modal-content .modal-body .body-items-comentarios-content{
+    background-color: rgb(32, 32, 32, 0.1);  /* gray */
+    border-radius: 10px;
+    padding: 10px;
+    position: relative;
+    margin-bottom: 2%;
+    color: black;
+}
+#modalcomentarios .modal-dialog .modal-content .modal-body .body-items-comentarios-content p{
+    width: 93%;
+}
+#modalcomentarios .modal-dialog .modal-content .modal-body .body-items-comentarios-content .date-comentarios{
+    text-align: end;
+    position: absolute;
+    bottom: -10px;
+    right: 10px;
+}
+#modalcomentarios .modal-dialog .modal-content .modal-body button{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+
+/*** Footer Modal Comentarios ***/
+.modal-footer .form-send-comentario{
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-between;
+}
+.modal-footer .form-send-comentario input{
+    margin-right: 2%;
+}
+
+
