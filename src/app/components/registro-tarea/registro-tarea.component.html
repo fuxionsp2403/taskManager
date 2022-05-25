@@ -1,0 +1,101 @@
+<div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="card-title">Agregar Tarea</h5>
+          <button type="button" id="btnagregar"  (click)="addTarea()" class="btn btn-primary btn-50"><i class="bi bi-plus-lg"></i> Tarea</button>
+        </div>
+        <div class="card-body">
+          <div id="tarjetas" class="flex">
+            <div *ngFor="let item of datos" >
+              <div class="box" >
+                <!-- Inicio Tarjeta -->
+                <div class="tarjeta">
+                  <div class="front">
+                    <div class="card-container">
+                      <div class="card-body-c">
+                        <i class="bi bi-apple i-t"></i>
+                        <h3>{{ item.nombreTarea }}</h3>
+                      <div class="buttom">
+                        <span class="fechas"><i class="bi bi-calendar2"></i> {{ item.fechaRegistro | date:'d/MM/yyyy' }}</span>
+                        <span class="fechas"><i class="bi bi-calendar2-check-fill"></i> {{ item.fechaFinaliza | date:'d/MM/yyyy'}}</span>
+                      </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="back">
+                    <div class="card-container">
+                    <div class="card-body-c">
+                      <div class="botones">
+                          <button class="btn btn-edit" (click)="editar(item.idTarea)" ><i class="bi bi-pencil-square"></i></button>
+                          <button class="btn btn-delete" (click)="eliminar(item.idTarea)"><i class="bi bi-trash-fill"></i></button>
+                          <button class="btn btn-add"><i class="bi bi-plus-square-fill"></i></button>
+                      </div>
+                        <div class="description">
+                          {{ item.contenidoTarea }}
+                        </div>
+                        <div class="buttom">
+                          <span class="fechas">Desarrollador: No se considero</span>
+                        </div>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Fin Tarjeta -->
+              </div>
+            </div>
+          </div>
+          <!-- Inicio Formulario -->
+          <div id="formulario" class="none">
+            <input  type="hidden"  [(ngModel)]="accion" class="hiden">
+            <form
+            autocomplete="off"
+            [formGroup]="miformulario"
+            >
+            
+            <input  type="hidden"  formControlName="idTarea" class="hiden">
+            <div class="col-md-12">
+              <label for="">Titulo:</label>
+              <input type="text"  formControlName="nombreTarea" class="form-control">
+            </div>
+            <div class="col-md-12">
+              <label for="">Fecha Inicio:</label>
+              <input type="date"  formControlName="fechaRegistro" class="form-control">
+            </div>
+            <div class="col-md-12">
+              <label for="">Fecha Termino:</label>
+              <input type="date"   formControlName="fechaFinaliza" class="form-control">
+            </div>
+            <div class="col-md-12">
+              <label for="">Descripcion:</label>
+              <textarea class="form-control" formControlName="contenidoTarea" cols="10" rows="3"></textarea>
+            </div>
+
+            
+            <div class="col-md-12">
+              <label for="">Desarrollador:</label>
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1" (click)="addDev(nombreDesarrollador.value)"><i class="bi bi-plus-square-fill"></i></span>
+                <input type="text" class="form-control" [formControl]="nombreDesarrollador" aria-describedby="basic-addon1">
+              </div>
+            </div>
+            <div class="coml-md-12">
+              <ol>
+                <li *ngFor="let ls of gDeveloper.controls let i = index" > {{ls.value}}</li>
+              </ol>
+            </div>
+            <div class="col-md-12 text-center">
+              <button class="btn btn-danger m-2" (click)="cancelar()">Cancelar</button>
+              <button class="btn btn-success m-2" [disabled]="!miformulario.valid" (click)="agregarTarea()">Guardar Datos</button>
+            </div>
+          </form>
+          </div>
+          <!-- {{ miformulario.value | json }} -->
+          <!-- 
+          {{ nombreDesarrollador.value}} -->
+          <!-- Fin Formulario -->
+        </div>
+      </div>
+    </div>
+  </div>
+  

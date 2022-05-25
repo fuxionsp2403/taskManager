@@ -1,0 +1,172 @@
+.none{
+    display: none;
+  }
+  .card-header{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .btn-50{
+    width: 140px;
+  }
+  .flex{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  
+  }
+  .box{
+      width: 250px;
+      height: 170px;
+    margin: 5px;
+  }
+  .c1{
+    color: rgb(251, 246, 246);
+    font-size: 30px;
+  }
+  .tarjeta{
+    border-radius: 20px;
+    font-family: 'Ubuntu';
+      position: relative;
+      width: 250px;
+      height: 170px;
+      -transform-style: preserve-3d;
+      -transform:rotateY(180deg);
+      -transition: 300ms ease-in;
+      transform: rotate(0deg);
+      transform-origin: 100% 0%;
+       transform-style: preserve-3d;
+    transition: .8s ease-in-out;
+      box-shadow: 0 3px 3px 0 rgba(0, 0, 0, .7), 0 3px 8px 0 rgba(0, 0, 0, .5);
+  }
+  .i-t{
+    font-size: 25px;
+    color: #ffa726;
+  }
+  .front, .back {
+    position: absolute;
+    border-radius: 10px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  .front {
+    background: #171717; /* url(../../../assets/card-front.jpg); */
+    font-size: 14px !important;
+    display:-webkit-flex;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    align-items: center;
+    z-index: 2;
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+  }
+  .back {
+    background: #171717;
+    -opacity: 0.9;
+      display:-webkit-flex;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    align-items: center;
+    z-index: 2;
+    -webkit-transform: rotateY(-180deg);
+    -moz-transform: rotateY(-180deg);
+    -ms-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+    font-family: 'Arimo', sans-serif;
+  }
+  .box:hover .tarjeta {
+    -webkit-transform: rotateY(180deg) translateX(100%);
+    -moz-transform: rotateY(180deg) translateX(100%);
+    -ms-transform: rotateY(180deg) translateX(100%);
+    transform: rotateY(180deg) translateX(100%);
+    cursor: pointer;
+  }
+  .card-container{
+    display: block;
+    text-align: center;
+    color: rgb(251, 246, 246);
+    font-family: 'Ubuntu';
+  }
+  .front .card-body-c{
+    padding: 5px;
+    font-weight: bold !important;
+  }
+  .front .card-body-c h3{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+  
+  .back .card-body-c{
+    padding: 5px;
+    text-align: justify;
+    color: rgb(251, 246, 246);
+  }
+  
+  .fechas{
+    color: #2f3032;
+    padding: 7x !important;
+    font-size: 12px;
+    margin: 5px;
+  }
+  .botones{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .botones .btn{
+    width: 40px;
+    border-radius: 50%;
+  }
+  .btn-edit{
+    background: #ff9410;
+    color: #171717;
+  }
+  .btn-delete{
+    background: #d22e15;
+    color: #f3ebeb;
+  }
+  .btn-add{
+    background: #44dc5d;
+    color: #f3ebeb;
+  }
+  
+  .botones .btn:hover{
+    opacity: 0.7;
+  }
+  
+  .description{
+    width: 100%;
+    padding: 4px;
+    font-size: 13px;
+  }
+  .buttom{
+    width: 100%;
+    background-color: #ff9410;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 30px;
+    border-radius: 0px 0px 10px 10px;
+  }
+#formulario{
+     width: 60%;
+     margin: auto;
+   }
+  
