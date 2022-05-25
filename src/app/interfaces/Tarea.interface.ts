@@ -6,4 +6,15 @@ export interface Tarea {
     fechaFinaliza:  Date;
     estado:         number;
     nameUser:       string[];
+    usuarios?:      Desarrolladores[];
+}
+
+export interface Desarrolladores{
+apellido: string;
+email: string;
+estado: number;
+id: number;
+nombre: string;
+password:string;
+username: string;
 }

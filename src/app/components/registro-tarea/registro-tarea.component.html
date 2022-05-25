@@ -14,6 +14,7 @@
                   <div class="front">
                     <div class="card-container">
                       <div class="card-body-c">
+                        <!-- Icono -->
                         <i class="bi bi-apple i-t"></i>
                         <h3>{{ item.nombreTarea }}</h3>
                       <div class="buttom">
@@ -35,7 +36,7 @@
                           {{ item.contenidoTarea }}
                         </div>
                         <div class="buttom">
-                          <span class="fechas">Desarrollador: No se considero</span>
+                          <span class="fechas">Desarrollador: <span  *ngFor="let p of item.usuarios"><p class="lista">{{p.nombre + ' '+p.apellido}}</p></span> </span>
                         </div>
                     </div>
                     </div>

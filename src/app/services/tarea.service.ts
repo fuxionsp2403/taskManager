@@ -8,7 +8,7 @@ import { Tarea } from '../interfaces/Tarea.interface';
 })
 export class TareaService {
 
-  url_base = 'http://localhost:8080/';///api/projects/1/tasks
+  url_base = 'http://localhost:8080/';
 
   constructor(private http: HttpClient) { }
 
