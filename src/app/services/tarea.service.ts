@@ -20,6 +20,15 @@ export class TareaService {
       })
     )
   }
+  
+  getObtenerProyectoID(idProyecto:number):Observable<any>{
+    return this.http.get<any>(this.url_base + 'api/projects/'+idProyecto)
+    .pipe(
+      catchError((e)=>{
+        return throwError(e);
+      })
+    )
+  }
 
   getListaTareaID(idProyecto:number,idTarea:number):Observable<any>{
     return this.http.get<any>(this.url_base + 'api/projects/'+idProyecto+'/tasks/'+idTarea)

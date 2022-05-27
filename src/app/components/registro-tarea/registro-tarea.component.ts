@@ -18,6 +18,7 @@ export class RegistroTareaComponent implements OnInit {
   idProyecto!:any;
   accion = 1;
   datos: Tarea [] = []; 
+  nameProyecto!: string;
   nombreDesarrollador = this.fb.control('');
   miformulario: FormGroup = this.fb.group({
     idTarea: [''], //esto tiene que cambiar con el ID del servicio
@@ -51,10 +52,18 @@ export class RegistroTareaComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.activateoute.params
+    /* this.activateoute.params
     .subscribe((id) => {
       this.idProyecto=id['id'];
       this.getListartareas(id['id']);
+    }) */
+    this.activateoute.params.pipe(
+      switchMap(({id}) => this.srvTarea.getObtenerProyectoID(id))
+    ).subscribe(response => {
+      console.log(response);
+      this.idProyecto=response.idProyecto;
+      this.getListartareas(this.idProyecto);
+      this.nameProyecto = response.idProyecto;
     })
     
   }
